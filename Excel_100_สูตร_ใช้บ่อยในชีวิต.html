@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>100 สูตร Excel ใช้บ่อยในชีวิตจริง</title>
+<style>
+:root{--green:#137c4b;--green2:#0d5f39;--pale:#eaf7f0;--ink:#193128;--muted:#60716a;--line:#dbe7e0;--bg:#f4f8f6;--card:#fff;--blue:#1769aa;--shadow:0 8px 25px rgba(19,76,49,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Thai","Segoe UI",Tahoma,sans-serif;line-height:1.55}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+.hero{background:linear-gradient(130deg,#0c5d38,#1a9159);color:white;padding:48px 0 42px}.hero h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.2;margin:0 0 10px}.hero p{max-width:750px;margin:0;opacity:.93}.hero .tag{display:inline-block;margin-bottom:14px;padding:5px 12px;border:1px solid #ffffff66;border-radius:99px;background:#ffffff18;font-size:.85rem}
+.toolbar{position:sticky;top:0;z-index:5;background:#ffffffee;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.tools{display:grid;grid-template-columns:auto 1fr auto;gap:12px;padding:12px 0}.search{width:100%;border:1px solid #bfd2c7;border-radius:12px;padding:12px 15px;font:inherit;color:var(--ink);background:white}.search:focus{outline:3px solid #bce8d0;border-color:var(--green)}.progress{white-space:nowrap;align-self:center;color:var(--muted);font-size:.9rem}.progress b{color:var(--green)}
+.view-switch{display:flex;background:#e7f0eb;border-radius:12px;padding:3px}.view-switch button{border:0;background:transparent;color:var(--muted);border-radius:9px;padding:8px 12px;font:inherit;font-weight:700;cursor:pointer;white-space:nowrap}.view-switch button.active{background:white;color:var(--green2);box-shadow:0 2px 7px #174a2c18}
+.cats{display:flex;gap:8px;overflow:auto;padding:16px 0 4px}.cats button{flex:none;border:1px solid var(--line);background:white;color:var(--muted);border-radius:99px;padding:8px 13px;cursor:pointer;font:inherit;font-size:.86rem}.cats button.active{background:var(--green);color:white;border-color:var(--green)}
+.intro{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.intro div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}.intro b{display:block;color:var(--green);margin-bottom:4px}.intro span{font-size:.88rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:14px 0 50px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}.top{display:flex;gap:10px;align-items:flex-start}.num{flex:none;width:36px;height:36px;border-radius:10px;background:var(--pale);color:var(--green2);display:grid;place-items:center;font-weight:800}.title{font-weight:750;font-size:1.03rem;line-height:1.35}.badge{display:inline-block;margin-top:4px;color:var(--green);background:var(--pale);border-radius:6px;padding:2px 7px;font-size:.72rem}.scenario{color:var(--muted);font-size:.9rem;min-height:44px}.formula{display:none;background:#102a20;color:#e9fff5;border-radius:11px;padding:13px;overflow:auto;font-family:Consolas,"Cascadia Code",monospace;font-size:.88rem;white-space:nowrap}.formula.show{display:block}.note{display:none;font-size:.82rem;color:var(--muted);background:#f7faf8;border-left:3px solid #79b796;padding:8px 10px;border-radius:6px}.note.show{display:block}.actions{display:flex;gap:8px;margin-top:auto}.actions button{border:0;border-radius:9px;padding:9px 12px;font:inherit;font-weight:650;cursor:pointer}.reveal{background:var(--green);color:#fff}.copy{background:var(--pale);color:var(--green2)}.empty{grid-column:1/-1;text-align:center;padding:50px;color:var(--muted)}
+.practice-card{grid-column:1/-1}.practice-card .scenario{min-height:auto}.practice-label{font-size:.76rem;font-weight:800;color:var(--muted);letter-spacing:.03em}.answer-zone,.tile-pool{min-height:58px;display:flex;align-items:center;align-content:center;flex-wrap:wrap;gap:8px;border-radius:12px;padding:9px}.answer-zone{border:2px dashed #9eb9aa;background:#f5faf7}.answer-zone:empty:before{content:"แตะชิ้นส่วนด้านล่างเพื่อเรียงสูตรที่นี่";color:#8a9a92;font-size:.85rem}.tile-pool{background:#edf4f0;border:1px solid var(--line)}.formula-tile{border:1px solid #b8cec1;background:white;color:#173c2b;border-radius:8px;padding:8px 10px;font:600 .9rem Consolas,"Cascadia Code",monospace;cursor:pointer;box-shadow:0 2px 5px #173c2b12}.answer-zone .formula-tile{background:#daf3e5;border-color:#55a777}.practice-actions{display:flex;gap:8px;flex-wrap:wrap}.practice-actions button{border:0;border-radius:9px;padding:9px 13px;font:inherit;font-weight:700;cursor:pointer}.check{background:var(--green);color:white}.reset{background:#edf1ef;color:var(--muted)}.result{display:none;border-radius:10px;padding:10px 12px;font-size:.88rem}.result.show{display:block}.result.good{background:#e4f7eb;color:#116138;border:1px solid #8ed0a8}.result.part{background:#fff5d8;color:#725813;border:1px solid #ead17d}.result.poor{background:#fff0ed;color:#8c3025;border:1px solid #e6a49c}.result code{display:block;margin-top:6px;color:var(--ink);font-family:Consolas,monospace}.practice-summary{grid-column:1/-1;background:linear-gradient(120deg,#123b2a,#1b7048);color:white;border-radius:16px;padding:18px 20px;display:flex;justify-content:space-between;gap:14px;align-items:center}.practice-summary strong{font-size:1.25rem}.practice-summary span{opacity:.85;font-size:.88rem}.practice-summary button{border:1px solid #ffffff66;background:#ffffff18;color:white;border-radius:9px;padding:9px 12px;font:inherit;cursor:pointer}
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 16px 40px}.sepnote{background:#fff8e7;border:1px solid #f0d991;border-radius:12px;padding:12px 15px;margin:8px 0 2px;color:#725b1c;font-size:.86rem}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.intro{grid-template-columns:1fr}.tools{grid-template-columns:1fr}.view-switch button{flex:1}.progress{text-align:right}.hero{padding:34px 0}.scenario{min-height:auto}.practice-summary{align-items:flex-start;flex-direction:column}}
+@media print{.toolbar,.cats,.actions,.intro,.sepnote{display:none}.hero{padding:20px;background:white;color:black;border-bottom:2px solid #137c4b}.grid{grid-template-columns:1fr 1fr}.card{break-inside:avoid;box-shadow:none}.formula,.note{display:block}.wrap{width:100%}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><span class="tag">คู่มือฉบับใช้งานจริง • 100 ตัวอย่าง</span><h1>100 สูตร Excel<br>ที่ใช้บ่อยในชีวิตจริง</h1><p>ตั้งแต่งบประมาณ รายรับ–รายจ่าย งานขาย การเรียน วันที่ ไปจนถึงการค้นหาและจัดข้อมูล กดดูสูตร แล้วนำไปปรับช่วงเซลล์ให้เข้ากับไฟล์ของคุณได้ทันที</p></div></header>
+<div class="toolbar"><div class="wrap tools"><div class="view-switch"><button id="guideMode" class="active">📖 คู่มือ</button><button id="practiceMode">✍️ แบบฝึกหัด</button></div><input id="search" class="search" type="search" placeholder="ค้นหา เช่น ค่าใช้จ่าย, วันครบกำหนด, ยอดขาย, XLOOKUP…" aria-label="ค้นหาสูตร"><div class="progress" id="progressText">แสดง <b id="count">100</b> / 100 ข้อ</div></div></div>
+<main class="wrap">
+<div id="cats" class="cats"></div>
+<div class="intro"><div><b>1. อ่านสถานการณ์</b><span>เริ่มจากโจทย์ที่พบได้จริง ไม่ต้องจำชื่อฟังก์ชันก่อน</span></div><div><b>2. กด “ดูสูตร”</b><span>ดูตัวอย่างพร้อมคำอธิบายสิ่งที่ต้องเปลี่ยน</span></div><div><b>3. คัดลอกไปปรับใช้</b><span>เปลี่ยนช่วงเซลล์และเงื่อนไขให้ตรงกับตารางของคุณ</span></div></div>
+<div class="sepnote">หมายเหตุ: หาก Excel ของคุณใช้เครื่องหมายอัฒภาค (;) ให้แทนเครื่องหมายจุลภาค (,) ในสูตร และสูตรที่มีป้าย “Microsoft 365” ต้องใช้ Excel รุ่นที่รองรับ Dynamic Arrays</div>
+<div id="grid" class="grid"></div>
+</main>
+<footer>ตัวอย่างทั้งหมดใช้ชื่อเซลล์สมมติ ควรตรวจช่วงข้อมูล รูปแบบวันที่ และอัตราดอกเบี้ยก่อนใช้งานจริง</footer>
+<script>
+const Q=[
+['คำนวณ','รวมค่าใช้จ่ายทั้งเดือน','=SUM(B2:B31)','รวมยอดค่าใช้จ่ายรายวันในคอลัมน์ B','เปลี่ยน B2:B31 เป็นช่วงยอดเงินจริง'],
+['คำนวณ','หาค่าใช้จ่ายเฉลี่ยต่อวัน','=AVERAGE(B2:B31)','ดูว่าโดยเฉลี่ยใช้เงินวันละเท่าไร','ช่องว่างจะไม่ถูกนำมาคิด แต่ค่า 0 จะถูกนำมาคิด'],
+['คำนวณ','หาค่าใช้จ่ายสูงสุด','=MAX(B2:B31)','หาวันที่มียอดใช้จ่ายมากที่สุด','ใช้คู่กับ XLOOKUP เพื่อหาวันที่ของยอดนั้นได้'],
+['คำนวณ','หาค่าใช้จ่ายต่ำสุด','=MIN(B2:B31)','หายอดใช้จ่ายที่น้อยที่สุด','ค่า 0 จะนับเป็นค่าต่ำสุดด้วย'],
+['คำนวณ','นับจำนวนรายการที่เป็นตัวเลข','=COUNT(B2:B100)','นับเฉพาะเซลล์ที่มีจำนวนเงิน','COUNT ไม่นับข้อความและช่องว่าง'],
+['คำนวณ','นับรายการทั้งหมดที่ไม่ว่าง','=COUNTA(A2:A100)','นับรายการจากชื่อหรือคำอธิบาย','COUNTA นับทั้งตัวเลขและข้อความ'],
+['คำนวณ','ปัดราคาเป็น 2 ตำแหน่ง','=ROUND(B2,2)','ทำราคาและภาษีให้เหลือ 2 ตำแหน่ง','เลข 2 คือจำนวนตำแหน่งทศนิยม'],
+['คำนวณ','ปัดยอดขึ้นเป็นจำนวนเต็ม','=ROUNDUP(B2,0)','ปัดจำนวนกล่องหรือหน่วยที่ต้องซื้อขึ้น','0 หมายถึงไม่มีทศนิยม'],
+['คำนวณ','ปัดยอดลงเป็นจำนวนเต็ม','=ROUNDDOWN(B2,0)','ตัดเศษจำนวนหน่วยออก','เหมาะกับจำนวนชุดเต็มที่ทำได้'],
+['คำนวณ','หาเศษที่เหลือจากการแบ่ง','=MOD(B2,C2)','หาของที่เหลือหลังจัดเป็นชุด','ใช้ตรวจเลขคู่ได้ด้วย MOD(B2,2)'],
+['คำนวณ','หาผลรวมแบบคูณจำนวนกับราคา','=SUMPRODUCT(B2:B20,C2:C20)','รวมมูลค่าจาก จำนวน × ราคาต่อหน่วย','ช่วงทั้งสองต้องมีขนาดเท่ากัน'],
+['งบประมาณ','รวมเฉพาะค่าอาหาร','=SUMIF(A2:A100,"อาหาร",B2:B100)','รวมยอดหมวดอาหารเพียงหมวดเดียว','A คือหมวด และ B คือจำนวนเงิน'],
+['งบประมาณ','รวมรายการที่เกิน 1,000 บาท','=SUMIF(B2:B100,">1000",B2:B100)','ดูยอดรวมของรายการก้อนใหญ่','ใส่เงื่อนไขเปรียบเทียบไว้ในเครื่องหมายคำพูด'],
+['งบประมาณ','รวมค่าอาหารของเดือนมกราคม','=SUMIFS(C2:C100,A2:A100,"อาหาร",B2:B100,"ม.ค.")','รวมด้วยสองเงื่อนไข: หมวดและเดือน','C คือยอดเงิน A คือหมวด B คือเดือน'],
+['งบประมาณ','นับจำนวนครั้งที่ซื้อกาแฟ','=COUNTIF(A2:A100,"กาแฟ")','ดูว่าซื้อกาแฟกี่ครั้ง','ใช้ *กาแฟ* หากข้อความมีคำอื่นร่วมด้วย'],
+['งบประมาณ','นับบิลช่วง 500–1,000 บาท','=COUNTIFS(B2:B100,">=500",B2:B100,"<=1000")','นับรายการในช่วงงบที่กำหนด','ใช้ช่วงเดิมกับเงื่อนไขล่างและบน'],
+['งบประมาณ','คำนวณเงินคงเหลือ','=B2-C2','นำรายรับลบรายจ่าย','B2 คือรายรับ C2 คือรายจ่าย'],
+['งบประมาณ','คำนวณเปอร์เซ็นต์เงินออม','=IFERROR(C2/B2,0)','เงินออมหารด้วยรายรับ','จัดรูปแบบผลลัพธ์เป็น Percentage'],
+['งบประมาณ','เตือนเมื่องบเกินกำหนด','=IF(C2>B2,"เกินงบ","อยู่ในงบ")','เปรียบเทียบยอดใช้จริงกับงบ','B2 คืองบ C2 คือยอดใช้จริง'],
+['งบประมาณ','แบ่งระดับสถานะงบ 3 แบบ','=IFS(C2>B2,"เกินงบ",C2>=B2*0.8,"ใกล้เต็ม",TRUE,"ปกติ")','แสดงสถานะเกินงบ ใกล้เต็ม หรือปกติ','IFS ตรวจจากซ้ายไปขวา • Microsoft 365'],
+['งบประมาณ','คำนวณส่วนลด 10% แต่ไม่เกิน 500','=MIN(B2*10%,500)','จำกัดมูลค่าส่วนลดสูงสุด','B2 คือยอดซื้อก่อนส่วนลด'],
+['งบประมาณ','บวก VAT 7%','=B2*(1+7%)','หาราคารวมภาษีมูลค่าเพิ่ม','หากต้องการเฉพาะ VAT ใช้ =B2*7%'],
+['งบประมาณ','ถอด VAT 7% จากราคารวม','=B2/1.07','หาราคาก่อน VAT จากยอดสุทธิ','เหมาะเมื่อ B2 เป็นราคาที่รวม VAT แล้ว'],
+['เงื่อนไข','แสดงผ่านหรือไม่ผ่าน','=IF(B2>=50,"ผ่าน","ไม่ผ่าน")','ประเมินคะแนนตามเกณฑ์ 50','ปรับ 50 เป็นเกณฑ์ของคุณ'],
+['เงื่อนไข','ตรวจหลายเงื่อนไขด้วย AND','=IF(AND(B2>=50,C2>=80%),"ผ่าน","ไม่ผ่าน")','ต้องผ่านทั้งคะแนนและเวลาเรียน','AND เป็นจริงเมื่อทุกเงื่อนไขเป็นจริง'],
+['เงื่อนไข','ตรวจอย่างน้อยหนึ่งเงื่อนไขด้วย OR','=IF(OR(B2="ด่วน",C2<TODAY()),"ติดตาม","ปกติ")','ติดตามงานที่ด่วนหรือเลยกำหนด','OR เป็นจริงเมื่อมีอย่างน้อยหนึ่งเงื่อนไขเป็นจริง'],
+['เงื่อนไข','สลับผลลัพธ์ด้วย NOT','=IF(NOT(B2="ชำระแล้ว"),"ค้างชำระ","")','แสดงข้อความเมื่อยังไม่ชำระ','NOT กลับค่า TRUE เป็น FALSE และกลับกัน'],
+['เงื่อนไข','ซ่อนข้อผิดพลาดจากการหาร','=IFERROR(B2/C2,0)','แสดง 0 เมื่อหารไม่ได้หรือเซลล์ผิดพลาด','ใช้ข้อความ "-" แทน 0 ได้'],
+['เงื่อนไข','ตรวจว่าเซลล์ว่างหรือไม่','=IF(ISBLANK(B2),"ยังไม่กรอก","กรอกแล้ว")','เตือนข้อมูลที่ยังไม่ได้กรอก','เซลล์ที่มีสูตรคืนค่า "" อาจไม่ถือว่าว่าง'],
+['เงื่อนไข','ตรวจว่าเป็นตัวเลขหรือไม่','=IF(ISNUMBER(B2),"ตัวเลข","ไม่ใช่ตัวเลข")','ตรวจความถูกต้องของข้อมูลจำนวนเงิน','ช่วยจับตัวเลขที่ถูกเก็บเป็นข้อความ'],
+['เงื่อนไข','ตรวจคำว่า “ด่วน” ในข้อความ','=IF(ISNUMBER(SEARCH("ด่วน",A2)),"ด่วน","")','ค้นคำสำคัญโดยไม่สนตัวพิมพ์เล็กใหญ่','SEARCH คืนตำแหน่งของคำที่พบ'],
+['วันที่','แสดงวันที่วันนี้','=TODAY()','ใส่วันที่ปัจจุบันและอัปเดตอัตโนมัติ','ฟังก์ชันนี้ไม่ต้องใส่อาร์กิวเมนต์'],
+['วันที่','แสดงวันและเวลาปัจจุบัน','=NOW()','บันทึกวันและเวลาที่เปิด/คำนวณไฟล์','ค่าเปลี่ยนเมื่อสมุดงานคำนวณใหม่'],
+['วันที่','สร้างวันที่จากปี เดือน วัน','=DATE(2026,12,31)','สร้างวันที่ให้ Excel เข้าใจแน่นอน','ลำดับคือ ปี, เดือน, วัน'],
+['วันที่','หาจำนวนวันที่ห่างกัน','=B2-A2','คำนวณวันจากวันที่เริ่มถึงวันที่สิ้นสุด','จัดรูปแบบผลลัพธ์เป็น Number'],
+['วันที่','หาอายุเป็นปีเต็ม','=DATEDIF(B2,TODAY(),"Y")','คำนวณอายุจากวันเกิด','B2 ต้องเป็นวันที่จริงของ Excel'],
+['วันที่','หาอายุเป็นปีและเดือน','=DATEDIF(B2,TODAY(),"Y")&" ปี "&DATEDIF(B2,TODAY(),"YM")&" เดือน"','แสดงอายุแบบอ่านง่าย','DATEDIF อาจไม่แสดงในรายการแนะนำ แต่ยังใช้งานได้'],
+['วันที่','เพิ่มอีก 30 วัน','=B2+30','หาวันครบกำหนดหลังวันเริ่ม 30 วัน','B2 คือวันที่เริ่มต้น'],
+['วันที่','เพิ่มหนึ่งเดือนแบบตรงเดือน','=EDATE(B2,1)','หาวันนัดหรือวันผ่อนงวดถัดไป','ใช้ -1 เพื่อย้อนหนึ่งเดือน'],
+['วันที่','หาวันสุดท้ายของเดือน','=EOMONTH(B2,0)','ปิดรอบบัญชี ณ สิ้นเดือน','0 คือเดือนเดียวกับ B2'],
+['วันที่','นับวันทำงาน','=NETWORKDAYS(B2,C2,$F$2:$F$20)','นับวันจันทร์–ศุกร์โดยหักวันหยุด','F2:F20 คือรายการวันหยุด'],
+['วันที่','หาวันครบกำหนดหลัง 10 วันทำงาน','=WORKDAY(B2,10,$F$2:$F$20)','เลื่อนกำหนดโดยข้ามเสาร์อาทิตย์และวันหยุด','F2:F20 เป็นช่วงวันหยุด'],
+['วันที่','แสดงชื่อวันภาษาไทย','=TEXT(B2,"[$-th-TH]dddd")','เปลี่ยนวันที่เป็นชื่อวัน เช่น วันจันทร์','TEXT คืนค่าเป็นข้อความ'],
+['วันที่','ดึงเลขเดือนจากวันที่','=MONTH(B2)','คืนค่าเดือน 1 ถึง 12','ใช้ YEAR และ DAY ในรูปแบบเดียวกันได้'],
+['วันที่','สร้างชื่อเดือนย่อ','=TEXT(B2,"mmm")','แสดงเดือนแบบ ม.ค. หรือ Jan ตามภาษาเครื่อง','ใช้ mmmm สำหรับชื่อเต็ม'],
+['วันที่','ตรวจว่าวันที่เลยกำหนดหรือยัง','=IF(AND(B2<TODAY(),C2<>"ชำระแล้ว"),"เลยกำหนด","ปกติ")','เตือนบิลที่ถึงกำหนดและยังไม่จ่าย','B คือวันครบกำหนด C คือสถานะ'],
+['ข้อความ','รวมชื่อและนามสกุล','=A2&" "&B2','ต่อข้อความสองช่องโดยเว้นวรรค','เครื่องหมาย & ใช้ต่อข้อความได้รวดเร็ว'],
+['ข้อความ','รวมหลายช่องและข้ามช่องว่าง','=TEXTJOIN(" ",TRUE,A2:C2)','รวมคำนำหน้า ชื่อ นามสกุล','TRUE หมายถึงข้ามเซลล์ว่าง'],
+['ข้อความ','ดึงอักษร 3 ตัวแรก','=LEFT(A2,3)','ดึงรหัสส่วนหน้าของข้อความ','เลข 3 คือจำนวนอักขระ'],
+['ข้อความ','ดึงอักษร 4 ตัวท้าย','=RIGHT(A2,4)','ดึงเลขท้ายเบอร์โทรหรือรหัส','เลข 4 คือจำนวนอักขระ'],
+['ข้อความ','ดึงข้อความตรงกลาง','=MID(A2,4,5)','เริ่มตัวที่ 4 และดึง 5 ตัว','ลำดับคือ ข้อความ, จุดเริ่ม, จำนวนตัว'],
+['ข้อความ','นับจำนวนอักขระ','=LEN(A2)','ตรวจความยาวรหัสหรือเบอร์โทร','LEN นับช่องว่างด้วย'],
+['ข้อความ','ลบช่องว่างส่วนเกิน','=TRIM(A2)','ลบช่องว่างหัวท้ายและลดช่องว่างซ้ำ','เหมาะกับข้อมูลที่คัดลอกจากเว็บ'],
+['ข้อความ','ลบอักขระแฝงที่พิมพ์ไม่ได้','=CLEAN(A2)','ทำความสะอาดข้อความนำเข้าจากระบบอื่น','มักใช้ร่วมกับ TRIM'],
+['ข้อความ','เปลี่ยนเป็นตัวพิมพ์ใหญ่','=UPPER(A2)','ทำรหัสภาษาอังกฤษให้เป็นตัวใหญ่','ใช้ LOWER สำหรับตัวเล็ก'],
+['ข้อความ','ขึ้นต้นแต่ละคำด้วยตัวใหญ่','=PROPER(A2)','จัดรูปแบบชื่อภาษาอังกฤษ','อาจต้องตรวจคำเฉพาะ เช่น McDonald'],
+['ข้อความ','แทนคำเดิมด้วยคำใหม่','=SUBSTITUTE(A2,"กทม.","กรุงเทพมหานคร")','แทนข้อความทุกตำแหน่งที่ตรงกัน','แยกตัวพิมพ์เล็กและใหญ่'],
+['ข้อความ','จัดเลขให้มีศูนย์นำหน้า','=TEXT(B2,"00000")','แสดงรหัส 42 เป็น 00042','ผลลัพธ์เป็นข้อความ ไม่ใช่ตัวเลข'],
+['ข้อความ','จัดจำนวนเงินพร้อมหน่วย','=TEXT(B2,"#,##0.00")&" บาท"','แสดงตัวเลขให้อ่านง่ายพร้อมคำว่าบาท','ผลลัพธ์เหมาะกับการแสดงผล ไม่ควรนำไปคำนวณต่อ'],
+['ข้อความ','หา @ ในอีเมล','=FIND("@",A2)','คืนตำแหน่งเครื่องหมาย @','FIND สนตัวพิมพ์เล็กใหญ่ ต่างจาก SEARCH'],
+['ข้อความ','ดึงชื่อก่อน @ ในอีเมล','=LEFT(A2,FIND("@",A2)-1)','ดึงชื่อผู้ใช้จากอีเมล','หากข้อมูลอาจผิด ให้ครอบด้วย IFERROR'],
+['ข้อความ','ดึงข้อความก่อนเครื่องหมาย -','=TEXTBEFORE(A2,"-")','แยกรหัสส่วนหน้าก่อนขีด','Microsoft 365'],
+['ข้อความ','ดึงข้อความหลังเครื่องหมาย -','=TEXTAFTER(A2,"-")','แยกข้อความส่วนหลังขีด','Microsoft 365'],
+['ค้นหา','ค้นหาราคาจากรหัสสินค้า','=XLOOKUP(A2,สินค้า!A:A,สินค้า!C:C,"ไม่พบ")','นำรหัสใน A2 ไปหาราคาในชีตสินค้า','Microsoft 365; ระบุข้อความเมื่อหาไม่พบได้'],
+['ค้นหา','ค้นหาชื่อจากรหัสแบบดั้งเดิม','=VLOOKUP(A2,สินค้า!A:D,2,FALSE)','ค้นรหัสในคอลัมน์แรกแล้วคืนชื่อคอลัมน์ 2','FALSE คือการจับคู่แบบตรงกัน'],
+['ค้นหา','ค้นหาแบบยืดหยุ่นด้วย INDEX/MATCH','=INDEX(C2:C100,MATCH(A2,A2:A100,0))','คืนค่าจาก C ในแถวที่พบรหัส','0 คือจับคู่ตรงกัน'],
+['ค้นหา','หาเลขลำดับของรายการ','=MATCH(E2,A2:A100,0)','หาว่าค่าใน E2 อยู่ลำดับที่เท่าไร','คืนตำแหน่งภายในช่วง ไม่ใช่เลขแถวชีต'],
+['ค้นหา','สร้างลิงก์เปิดเว็บไซต์','=HYPERLINK(A2,"เปิดเว็บไซต์")','เปลี่ยน URL ใน A2 เป็นลิงก์ข้อความ','ตรวจว่า URL มี https://'],
+['ข้อมูล','เรียงยอดจากมากไปน้อย','=SORT(A2:C100,3,-1)','เรียงตารางตามคอลัมน์ยอดขายคอลัมน์ 3','-1 คือมากไปน้อย • Microsoft 365'],
+['ข้อมูล','กรองเฉพาะรายการที่ยังไม่ชำระ','=FILTER(A2:D100,D2:D100="ค้างชำระ","ไม่พบ")','สร้างตารางเฉพาะบิลค้างชำระ','ผลลัพธ์กระจายหลายเซลล์ • Microsoft 365'],
+['ข้อมูล','แสดงรายชื่อลูกค้าไม่ซ้ำ','=UNIQUE(A2:A100)','ตัดชื่อซ้ำออกอัตโนมัติ','Microsoft 365'],
+['ข้อมูล','กรองและเรียงพร้อมกัน','=SORT(FILTER(A2:C100,C2:C100>1000),3,-1)','แสดงยอดเกิน 1,000 และเรียงจากมากไปน้อย','Microsoft 365'],
+['ข้อมูล','สร้างเลขลำดับ 1–100','=SEQUENCE(100)','สร้าง Running Number อัตโนมัติ','Microsoft 365'],
+['ข้อมูล','ดึง 5 รายการแรก','=TAKE(A2:D100,5)','แสดงเฉพาะ 5 แถวแรก','ใช้ -5 เพื่อดึง 5 แถวท้าย • Microsoft 365'],
+['ข้อมูล','เลือกเฉพาะคอลัมน์ 1 และ 3','=CHOOSECOLS(A2:D100,1,3)','สร้างมุมมองใหม่จากบางคอลัมน์','Microsoft 365'],
+['ข้อมูล','รวมข้อมูลสองช่วงแนวตั้ง','=VSTACK(A2:C10,E2:G10)','นำสองตารางมาต่อกันด้านล่าง','จำนวนคอลัมน์ควรสอดคล้องกัน • Microsoft 365'],
+['ข้อมูล','รวมข้อมูลสองช่วงแนวนอน','=HSTACK(A2:A10,C2:C10)','นำสองช่วงมาต่อกันด้านข้าง','จำนวนแถวควรสอดคล้องกัน • Microsoft 365'],
+['สถิติ','หาค่ากลางของค่าใช้จ่าย','=MEDIAN(B2:B100)','หาค่ากลางที่ทนต่อยอดสูงผิดปกติ','ครึ่งหนึ่งของข้อมูลสูงกว่าและครึ่งหนึ่งต่ำกว่า'],
+['สถิติ','หาค่าที่เกิดบ่อยที่สุด','=MODE.SNGL(B2:B100)','หาจำนวนหรือราคาที่พบซ้ำบ่อยสุด','ใช้กับข้อมูลตัวเลข'],
+['สถิติ','หาลำดับคะแนนจากมากไปน้อย','=RANK.EQ(B2,$B$2:$B$40,0)','จัดอันดับคะแนนของ B2','0 คืออันดับจากค่ามากไปน้อย'],
+['สถิติ','หาส่วนเบี่ยงเบนมาตรฐาน','=STDEV.S(B2:B100)','ดูการกระจายของข้อมูลตัวอย่าง','ค่ายิ่งสูง ข้อมูลยิ่งกระจาย'],
+['งานขาย','รวมยอดขายของพนักงานคนหนึ่ง','=SUMIFS(D2:D100,B2:B100,F2)','รวมยอดขายเมื่อชื่อพนักงานตรงกับ F2','D คือยอดขาย B คือชื่อพนักงาน'],
+['งานขาย','หายอดขายเฉลี่ยของสินค้า A','=AVERAGEIF(A2:A100,"สินค้า A",D2:D100)','เฉลี่ยยอดเฉพาะสินค้าที่กำหนด','ใช้ AVERAGEIFS เมื่อต้องการหลายเงื่อนไข'],
+['งานขาย','หายอดขายเฉลี่ยตามคนและเดือน','=AVERAGEIFS(D2:D100,B2:B100,F2,C2:C100,G2)','เฉลี่ยยอดด้วยเงื่อนไขพนักงานและเดือน','D คือยอด B คือพนักงาน C คือเดือน'],
+['งานขาย','หาค่าคอมมิชชันแบบขั้นบันได','=IFS(B2>=100000,B2*5%,B2>=50000,B2*3%,TRUE,B2*1%)','คิดคอม 5%, 3% หรือ 1% ตามยอด','เรียงเกณฑ์จากสูงไปต่ำ • Microsoft 365'],
+['งานขาย','คำนวณกำไร','=B2-C2','นำราคาขายลบต้นทุน','B คือราคาขาย C คือต้นทุน'],
+['งานขาย','คำนวณอัตรากำไรขั้นต้น','=IFERROR((B2-C2)/B2,0)','กำไรหารด้วยราคาขาย','จัดรูปแบบเป็น Percentage'],
+['การเงิน','คำนวณค่างวดเงินกู้ต่อเดือน','=PMT(B2/12,C2*12,-D2)','คำนวณผ่อนรายเดือนจากดอกเบี้ย ปี และเงินต้น','B คือดอกเบี้ยต่อปี C คือจำนวนปี D คือเงินต้น'],
+['การเงิน','หามูลค่าเงินออมในอนาคต','=FV(B2/12,C2*12,-D2,0)','คำนวณเงินปลายทางจากการออมรายเดือน','B คือดอกเบี้ยต่อปี C คือปี D คือเงินออมต่อเดือน'],
+['การเงิน','หามูลค่าปัจจุบันของเงินอนาคต','=PV(B2,C2,0,-D2)','แปลงเงินก้อนในอนาคตเป็นมูลค่าปัจจุบัน','B คืออัตราต่อช่วง C คือจำนวนช่วง D คือเงินอนาคต'],
+['การเงิน','หาจำนวนงวดที่ต้องผ่อน','=NPER(B2/12,-C2,D2)','คำนวณจำนวนเดือนจากดอกเบี้ย ค่างวด และเงินต้น','ตรวจเครื่องหมายบวก/ลบของกระแสเงินสด'],
+['สุ่มและอื่นๆ','สุ่มเลข 1–100','=RANDBETWEEN(1,100)','สุ่มหมายเลขจับรางวัล','ค่าเปลี่ยนเมื่อชีตคำนวณใหม่'],
+['สุ่มและอื่นๆ','สุ่มเลขทศนิยม 0–1','=RAND()','สุ่มค่าสำหรับตัวอย่างหรือจำลองข้อมูล','ค่าเปลี่ยนเมื่อชีตคำนวณใหม่'],
+['สุ่มและอื่นๆ','แปลงข้อความตัวเลขเป็นตัวเลข','=VALUE(A2)','แปลง “1,250” ให้คำนวณต่อได้','ผลขึ้นกับรูปแบบตัวเลขของเครื่อง'],
+['สุ่มและอื่นๆ','แปลงหน่วยกิโลเมตรเป็นไมล์','=CONVERT(B2,"km","mi")','แปลงค่าระหว่างหน่วยมาตรฐาน','ตรวจรหัสหน่วยให้ถูกต้อง'],
+['สุ่มและอื่นๆ','ตั้งชื่อค่าภายในสูตรด้วย LET','=LET(รายรับ,B2,รายจ่าย,C2,รายรับ-รายจ่าย)','ทำสูตรยาวให้อ่านง่ายและคำนวณซ้ำน้อยลง','Microsoft 365; ชื่อตัวแปรห้ามชนกับชื่อเซลล์'],
+['สุ่มและอื่นๆ','หาผลรวมย่อยตามตัวกรอง','=SUBTOTAL(9,B2:B100)','รวมเฉพาะแถวที่มองเห็นหลังกรอง','9 คือ SUM; แถวที่ถูกกรองออกจะไม่นับ'],
+['สุ่มและอื่นๆ','รวมเฉพาะแถวที่มองเห็นและข้ามแถวซ่อน','=AGGREGATE(9,5,B2:B100)','รวมโดยไม่เอาแถวที่ซ่อน','9 คือ SUM และ 5 คือข้ามแถวซ่อน'],
+['สุ่มและอื่นๆ','อ้างอิงเซลล์จากข้อความ','=INDIRECT(A2&"!B2")','ดึง B2 จากชีตที่มีชื่ออยู่ใน A2','INDIRECT เป็น volatile และอาจทำไฟล์ใหญ่ช้า'],
+['สุ่มและอื่นๆ','หาหมายเลขแถวปัจจุบัน','=ROW()','สร้างเลขอ้างอิงจากแถวที่สูตรอยู่','ใช้ =ROW()-1 หากหัวตารางอยู่แถว 1']
+];
+const categories=['ทั้งหมด',...new Set(Q.map(x=>x[0]))];let active='ทั้งหมด';
+const grid=document.querySelector('#grid'),search=document.querySelector('#search'),count=document.querySelector('#count'),cats=document.querySelector('#cats');
+categories.forEach(c=>{const b=document.createElement('button');b.textContent=c;b.className=c==='ทั้งหมด'?'active':'';b.onclick=()=>{active=c;[...cats.children].forEach(x=>x.classList.toggle('active',x===b));render()};cats.appendChild(b)});
+function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){const term=search.value.trim().toLowerCase();const rows=Q.map((q,i)=>({q,i})).filter(({q})=>(active==='ทั้งหมด'||q[0]===active)&&q.join(' ').toLowerCase().includes(term));count.textContent=rows.length;grid.innerHTML=rows.length?'':'<div class="empty">ไม่พบสูตรที่ตรงกับคำค้น ลองใช้คำที่สั้นลงหรือเลือก “ทั้งหมด”</div>';rows.forEach(({q,i})=>{const c=document.createElement('article');c.className='card';const is365=q[4].includes('Microsoft 365');c.innerHTML=`<div class="top"><span class="num">${i+1}</span><div><div class="title">${esc(q[1])}</div><span class="badge">${esc(q[0])}${is365?' • Microsoft 365':''}</span></div></div><div class="scenario">${esc(q[3])}</div><code class="formula">${esc(q[2])}</code><div class="note">💡 ${esc(q[4])}</div><div class="actions"><button class="reveal">ดูสูตร</button><button class="copy" hidden>คัดลอกสูตร</button></div>`;const f=c.querySelector('.formula'),n=c.querySelector('.note'),r=c.querySelector('.reveal'),cp=c.querySelector('.copy');r.onclick=()=>{const show=!f.classList.contains('show');f.classList.toggle('show',show);n.classList.toggle('show',show);cp.hidden=!show;r.textContent=show?'ซ่อนสูตร':'ดูสูตร'};cp.onclick=async()=>{try{await navigator.clipboard.writeText(q[2]);cp.textContent='คัดลอกแล้ว ✓';setTimeout(()=>cp.textContent='คัดลอกสูตร',1400)}catch{cp.textContent='เลือกสูตรด้านบนเพื่อคัดลอก'}};grid.appendChild(c)})}
+let viewMode='guide';
+const scores=new Array(Q.length).fill(null);
+const guideMode=document.querySelector('#guideMode'),practiceMode=document.querySelector('#practiceMode'),progressText=document.querySelector('#progressText');
+function formulaPieces(s){
+  const out=[];let buf='';
+  const flush=()=>{if(buf){out.push(buf);buf=''}};
+  for(let i=0;i<s.length;i++){
+    const ch=s[i];
+    if(ch==='"'){
+      flush();let str='"';
+      while(++i<s.length){str+=s[i];if(s[i]==='"'){if(s[i+1]==='"'){str+=s[++i]}else break}}
+      out.push(str);continue;
+    }
+    if(/\s/.test(ch)){flush();continue}
+    if(',()&+\-*/=<>' .includes(ch)){
+      flush();
+      if((ch==='<'||ch==='>')&&(s[i+1]==='='||s[i+1]==='>'))out.push(ch+s[++i]);
+      else out.push(ch);
+    }else buf+=ch;
+  }
+  flush();return out;
+}
+function shuffled(a){
+  const x=a.slice();for(let i=x.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[x[i],x[j]]=[x[j],x[i]]}
+  if(x.length>1&&x.every((v,i)=>v.v===a[i].v))[x[0],x[1]]=[x[1],x[0]];
+  return x;
+}
+function guideCard(q,i){
+  const c=document.createElement('article');c.className='card';const is365=q[4].includes('Microsoft 365');
+  c.innerHTML=`<div class="top"><span class="num">${i+1}</span><div><div class="title">${esc(q[1])}</div><span class="badge">${esc(q[0])}${is365?' • Microsoft 365':''}</span></div></div><div class="scenario">${esc(q[3])}</div><code class="formula show">${esc(q[2])}</code><div class="note show">💡 ${esc(q[4])}</div><div class="actions"><button class="copy">คัดลอกสูตร</button></div>`;
+  const cp=c.querySelector('.copy');
+  cp.onclick=async()=>{try{await navigator.clipboard.writeText(q[2]);cp.textContent='คัดลอกแล้ว ✓';setTimeout(()=>cp.textContent='คัดลอกสูตร',1400)}catch{cp.textContent='เลือกสูตรด้านบนเพื่อคัดลอก'}};
+  return c;
+}
+function practiceCard(q,i){
+  const c=document.createElement('article');c.className='card practice-card';const raw=formulaPieces(q[2]);let answer=[];let pool=shuffled(raw.map((v,id)=>({v,id})));const is365=q[4].includes('Microsoft 365');
+  c.innerHTML=`<div class="top"><span class="num">${i+1}</span><div><div class="title">${esc(q[1])}</div><span class="badge">${esc(q[0])}${is365?' • Microsoft 365':''}</span></div></div><div class="scenario">🎯 ${esc(q[3])}</div><div class="practice-label">คำตอบของคุณ — เรียงตามลำดับ</div><div class="answer-zone"></div><div class="practice-label">ชิ้นส่วนสูตร — แตะเพื่อเลือก</div><div class="tile-pool"></div><div class="practice-actions"><button class="check">ตรวจคำตอบและให้คะแนน</button><button class="reset">ล้างคำตอบ</button></div><div class="result"></div>`;
+  const az=c.querySelector('.answer-zone'),pz=c.querySelector('.tile-pool'),res=c.querySelector('.result');
+  function draw(){az.innerHTML='';pz.innerHTML='';answer.forEach(o=>az.appendChild(tile(o,'answer')));pool.forEach(o=>pz.appendChild(tile(o,'pool')))}
+  function tile(o,from){const b=document.createElement('button');b.className='formula-tile';b.type='button';b.textContent=o.v;b.onclick=()=>{if(from==='pool'){pool=pool.filter(x=>x.id!==o.id);answer.push(o)}else{answer=answer.filter(x=>x.id!==o.id);pool.push(o)}draw()};return b}
+  c.querySelector('.reset').onclick=()=>{answer=[];pool=shuffled(raw.map((v,id)=>({v,id})));res.className='result';res.innerHTML='';draw()};
+  c.querySelector('.check').onclick=()=>{let right=0;raw.forEach((v,j)=>{if(answer[j]?.v===v)right++});const exact=answer.length===raw.length&&right===raw.length;const pct=Math.round(right/raw.length*100),pts=Math.round(pct/10);scores[i]=pts;res.className='result show '+(exact?'good':pct>=40?'part':'poor');res.innerHTML=exact?`🎉 ถูกต้องครบถ้วน — <b>10/10 คะแนน</b><code>${esc(q[2])}</code>`:`${pct>=40?'ใกล้แล้ว ลองจัดลำดับอีกครั้ง':'ยังไม่ถูก ลองดูรูปแบบสูตรและจัดใหม่'} — <b>${pts}/10 คะแนน</b><br>วางถูกตำแหน่ง ${right}/${raw.length} ชิ้น <code>เฉลย: ${esc(q[2])}</code>`;updateProgress()};
+  draw();return c;
+}
+function updateProgress(visible){
+  const done=scores.filter(x=>x!==null).length,total=scores.reduce((a,x)=>a+(x||0),0),shown=visible??(Number(count.textContent)||0);
+  progressText.innerHTML=viewMode==='practice'?`แสดง <b>${shown}</b> / 100 • ทำแล้ว <b>${done}</b> • คะแนน <b>${total}</b>/1000`:`แสดง <b>${shown}</b> / 100 ข้อ`;
+  const summaryScore=document.querySelector('#summaryScore'),summaryDone=document.querySelector('#summaryDone');if(summaryScore)summaryScore.textContent=total;if(summaryDone)summaryDone.textContent=done;
+}
+function render(){
+  const term=search.value.trim().toLowerCase();const rows=Q.map((q,i)=>({q,i})).filter(({q})=>(active===categories[0]||q[0]===active)&&q.join(' ').toLowerCase().includes(term));count.textContent=rows.length;grid.innerHTML='';
+  document.querySelector('.intro').style.display=viewMode==='guide'?'':'none';document.querySelector('.sepnote').style.display=viewMode==='guide'?'':'none';
+  if(!rows.length){grid.innerHTML='<div class="empty">ไม่พบสูตรที่ตรงกับคำค้น ลองใช้คำที่สั้นลงหรือเลือก “ทั้งหมด”</div>';updateProgress(0);return}
+  if(viewMode==='practice'){
+    const total=scores.reduce((a,x)=>a+(x||0),0),done=scores.filter(x=>x!==null).length,s=document.createElement('div');s.className='practice-summary';s.innerHTML=`<div><strong>คะแนนรวม <span id="summaryScore">${total}</span>/1000</strong><br><span>ทำแล้ว <b id="summaryDone">${done}</b> จาก 100 ข้อ • ข้อละ 10 คะแนน</span></div><button>เริ่มคะแนนใหม่</button>`;s.querySelector('button').onclick=()=>{scores.fill(null);render()};grid.appendChild(s);
+  }
+  rows.forEach(({q,i})=>grid.appendChild(viewMode==='guide'?guideCard(q,i):practiceCard(q,i)));updateProgress(rows.length);
+}
+function setMode(mode){viewMode=mode;guideMode.classList.toggle('active',mode==='guide');practiceMode.classList.toggle('active',mode==='practice');render();scrollTo({top:document.querySelector('.toolbar').offsetTop,behavior:'smooth'})}
+guideMode.onclick=()=>setMode('guide');practiceMode.onclick=()=>setMode('practice');search.addEventListener('input',render);render();
+</script>
+</body>
+</html>
