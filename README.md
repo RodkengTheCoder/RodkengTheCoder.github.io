@@ -1,31 +1,25 @@
-# 100 สูตร Excel ที่ใช้บ่อยในชีวิตจริง
+# Learning Labs — GitHub Pages
 
-โฟลเดอร์นี้จัดเตรียมไว้สำหรับเผยแพร่ด้วย GitHub Pages โดยตรง
+โฟลเดอร์นี้จัดโครงสร้างให้พร้อมอัปโหลดขึ้น GitHub Pages แล้ว
 
-## ไฟล์ที่ต้องอัปโหลด
+## เว็บไซต์ที่รวมไว้
 
-- `100excel.html` — เว็บไซต์รวมคู่มือและแบบฝึกหัด Excel 100 ข้อ
-- `.nojekyll` — ป้องกัน GitHub Pages ประมวลผลเว็บไซต์ผ่าน Jekyll โดยไม่จำเป็น
-- `README.md` — คำแนะนำนี้
+- `learning-labs.html` — หน้าเลือกเครื่องมือหลัก
+- `hr-prompt-lab/hr-prompt-lab.html` — HR Prompt Lab
+- `employee-prompt-lab/employee-prompt-lab-1000-use-cases.html` — Employee Prompt Lab 1,000 Use Cases
+- `excel-practice/excel-100-formulas.html` — Excel 100 สูตรใช้บ่อย
 
-## วิธีอัปโหลดขึ้น GitHub Pages
+## วิธีนำขึ้น GitHub Pages
 
-1. สร้าง Repository ใหม่บน GitHub หรือเปิด Repository ที่ต้องการ
-2. อัปโหลดไฟล์ **ทั้งหมดที่อยู่ภายในโฟลเดอร์นี้** ไปไว้ที่หน้าแรกของ Repository
-3. เข้าเมนู **Settings → Pages**
-4. ที่ **Build and deployment** เลือก **Deploy from a branch**
-5. เลือก Branch เป็น `main` และ Folder เป็น `/ (root)` จากนั้นกด **Save**
-6. รอประมาณ 1–5 นาที แล้วเปิดลิงก์ที่ GitHub แสดงในหน้า Pages
+1. สร้าง Repository ใหม่ใน GitHub
+2. อัปโหลด **ไฟล์และโฟลเดอร์ทั้งหมดที่อยู่ภายในโฟลเดอร์นี้** ไปที่รากของ Repository
+3. เปิด `Settings` → `Pages`
+4. ในหัวข้อ `Build and deployment` เลือก `Deploy from a branch`
+5. เลือก Branch `main` และ Folder `/(root)` แล้วกด `Save`
+6. รอสักครู่ จากนั้นเปิดลิงก์ที่ GitHub แสดงในหน้า Pages
 
-เว็บไซต์นี้เปิดด้วย URL รูปแบบนี้:
+ไฟล์เว็บจริงใช้ชื่อที่สื่อความหมาย ส่วน `index.html` ในแต่ละตำแหน่งเป็นไฟล์ทางเข้าขนาดเล็กที่จะพาผู้ใช้ไปยังเว็บจริงอัตโนมัติ โครงสร้างนี้จึงยังรองรับ Project Pages เช่น `https://USERNAME.github.io/REPOSITORY/`
 
-`https://ชื่อผู้ใช้.github.io/ชื่อ-repository/100excel.html`
+## การอัปเดต
 
-หาก Repository มีหน้า `index.html` สำหรับรวมหลายเว็บไซต์ สามารถเพิ่มลิงก์ไปที่ `100excel.html` จากหน้าหลักนั้นได้
-
-## หากเว็บไซต์ยังไม่เปิด
-
-- ตรวจว่าไฟล์ `100excel.html` อยู่ที่หน้าแรกของ Repository และ URL ระบุชื่อไฟล์ครบ
-- ตรวจว่า Repository ใช้ Branch ชื่อ `main` ตรงกับที่เลือกใน Pages
-- เปิดแท็บ **Actions** เพื่อตรวจว่างาน Deploy ผ่านหรือมีข้อผิดพลาด
-- หลังแก้ไฟล์ ให้รอ Deploy เสร็จและกดรีเฟรชแบบไม่ใช้แคช (`Ctrl + F5`)
+แทนที่ไฟล์เว็บที่มีชื่อเฉพาะภายในโฟลเดอร์ย่อยที่ต้องการ จากนั้น Commit การเปลี่ยนแปลงไปยัง Branch `main` โดยคงชื่อไฟล์และโครงสร้างโฟลเดอร์เดิมไว้ ไม่ต้องแก้ไฟล์ `index.html` ที่ใช้สำหรับส่งต่อ
